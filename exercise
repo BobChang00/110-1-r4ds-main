@@ -36,3 +36,52 @@ concerts_oboCopy[[3]]$showInfo[[1]]$location<-"Taichung Opera House"
 
 concerts_oboCopy[[3]]$showInfo[[1]][c("time","location")]
 ```
+
+Exercise 3.4 
+
+```{r}
+JohnsFamily <-
+  list(
+    name = "John", 
+    age = 35,
+    spouse = list(
+      name = "Mary", 
+      age = 32),
+    children = list(
+      list(
+        name = "Bill", 
+        age = 5),
+      list(
+        name = "Jane", 
+        age = 3)
+    )
+  )
+```
+
+```{r}
+JohnsFamily->JohnsFamilyCopy3
+JohnsFamilyCopy3$children[3]<-
+  list(
+    list(
+      name="newborn",
+      age=0
+    )
+  )
+
+JohnsFamilyCopy3$children[3]
+```
+
+Exercise 3.5 
+
+```{r}
+concerts_oboCopy<-concerts_obo
+concerts_oboCopy[[5]]$showInfo[[1]]->concerts_oboCopy[[5]]$showInfo[[2]]
+
+concerts_oboCopy[[5]]$showInfo[[1]]$time
+concerts_oboCopy[[5]]$showInfo[[2]]$time<-"2022/05/16 10:00:00"
+
+concerts_oboCopy[[5]]$showInfo[[1]]$endTime
+concerts_oboCopy[[5]]$showInfo[[2]]$endTime<-"2022/05/17 22:00:00"
+
+concerts_oboCopy[[5]]$showInfo[[2]]
+```
