@@ -85,3 +85,13 @@ concerts_oboCopy[[5]]$showInfo[[2]]$endTime<-"2022/05/17 22:00:00"
 
 concerts_oboCopy[[5]]$showInfo[[2]]
 ```
+
+Exercise 3.6 
+
+```{r}
+concerts_obo->concerts_oboCopy
+concerts_oboCopy[-c(2,5,7)]->concerts_oboCopy
+
+concerts_oboCopy[c(2,5,7)
+                 ]
+```
