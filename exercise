@@ -1,0 +1,38 @@
+---
+title: "exercise"
+output: html_notebook
+---
+```{r}
+browseURL("https://data.gov.tw/dataset/6013")
+
+install.packages("jsonlite")
+
+# Observation by observation
+concerts_obo <-
+  jsonlite::fromJSON("https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=17", simplifyDataFrame = F)
+
+# Feature by feature
+concerts_fbf <-
+  jsonlite::fromJSON("https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=17", simplifyDataFrame = T)
+
+View(concerts_fbf)
+
+```
+
+Exercise 3.2 
+
+```{r}
+concert_sample <- concerts_obo[c(3,5)]
+
+firstShowInfo <- concerts_obo[[2]]$showInfo[[1]][c("time","location")]
+```
+
+Exercise 3.3
+
+```{r}
+concerts_obo->concerts_oboCopy
+concerts_oboCopy[[3]]$showInfo[[1]]$time<-"2022/01/31 19:30:00"
+concerts_oboCopy[[3]]$showInfo[[1]]$location<-"Taichung Opera House"
+
+concerts_oboCopy[[3]]$showInfo[[1]][c("time","location")]
+```
