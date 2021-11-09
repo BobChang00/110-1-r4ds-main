@@ -95,3 +95,10 @@ concerts_oboCopy[-c(2,5,7)]->concerts_oboCopy
 concerts_oboCopy[c(2,5,7)
                  ]
 ```
+
+Exercise 3.7
+```{r}
+JohnsFamilyCopy4<-JohnsFamily
+JohnsFamilyCopy4$spouse<-NULL
+
+```
